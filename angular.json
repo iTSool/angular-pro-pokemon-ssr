@@ -29,6 +29,11 @@
                 "glob": ".htaccess",
                 "input": "src",
                 "output": "/"
+              },
+              {
+                "glob": ".htaccess",
+                "input": "src",
+                "output": "/pokemons"
               }
             ],
             "styles": [
