@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-builders/custom-webpack:application",
           "options": {
             "outputPath": "dist/pokemon-ssr",
             "index": "src/index.html",
@@ -50,7 +50,22 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "extraWebpackConfig":{
+                "plugins": [
+                  {
+                    "name": "CopyWebpackPlugin",
+                    "options": {
+                      "patterns": [
+                        {
+                          "from": "./src/.htaccess",
+                          "to": ""
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
             },
             "development": {
               "optimization": false,
